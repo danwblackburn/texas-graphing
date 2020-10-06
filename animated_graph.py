@@ -14,6 +14,7 @@ date_axis = [dates.datestr2num(date) for date in date_list]
 
 fig = plt.figure() 
 plt.ylabel('New Cases')
+
 plt.title('Texas Corona Cases')
 plt.xticks([])
 ax = plt.gca()
@@ -24,7 +25,8 @@ def animate(i):
     line.set_data(date_axis[:i], new_cases[:i])
     ax.set_xlim(date_axis[0], date_axis[i - 1] + 5)
     ax.set_ylim(0, max(new_cases))
-    plt.xlabel(date_list[i - 1])
+    if not i == 0:
+        plt.xlabel(date_list[i - 1])
 
 anim = ani.FuncAnimation(fig, animate, interval=97, frames=len(new_cases) + 1)
 
