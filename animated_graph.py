@@ -26,8 +26,8 @@ def animate(i):
     ax.set_ylim(0, max(new_cases))
     plt.xlabel(date_list[i - 1])
 
-anim = ani.FuncAnimation(fig, animate, interval=40, frames=len(new_cases) + 1)
+anim = ani.FuncAnimation(fig, animate, interval=97, frames=len(new_cases) + 1)
 
-# anim.save('graph.mp4')
+anim.save('graph.mp4')
 
-plt.show()
+# plt.show()
